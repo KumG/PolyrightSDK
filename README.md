@@ -63,7 +63,7 @@ The SDK allows activation token management. That is:
   - IOS 12 (with Xamarin)
 
 ## Installation
-1. Install the Polyright SDK NuGet package
+1. Install the Polyright SDK NuGet package from Polyright NuGet repository using the NuGet Package Manager
 
 ## Initialization
 
