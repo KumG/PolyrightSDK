@@ -3,6 +3,10 @@
 The Polyright SDK simplifies the integration of polyright functionalities into a third-party system. All necessary methods to authenticate user, read cards and do polyright or TWINT transactions through the polyright platform are provided.
 The security is managed on the Polyright platform.
 
+## Glossary
+
+- Polyright system: A Polyright Manager installation, installed on a customer server (on premises)
+- Polyright platform: Cloud website connected to multiple systems
 
 ## Functionalities
 
