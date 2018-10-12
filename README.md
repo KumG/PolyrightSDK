@@ -124,7 +124,7 @@ var transactionRequest = new TransactionRequest
 });
 var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
 await transactionScope.AwaitTransactionCompletionAsync(token);
-Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
+//Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
 
 ## Do a transaction with TWINT
@@ -138,7 +138,7 @@ var transactionRequest = new TransactionRequest
 };
 var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
 var twintData = await transactionScope.GetTwintDataAsync(token);
-Console.WriteLine($"TWINT code: {twintData.Token}");
+//Console.WriteLine($"TWINT code: {twintData.Token}");
 await transactionScope.AwaitTransactionCompletionAsync(token);
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
