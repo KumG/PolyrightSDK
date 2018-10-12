@@ -150,7 +150,7 @@ await financialService.DoFinancialClosingAsync(token);
 ```
 ## 
 
-## Get Person Data
+## Get Person Data and transactions
 
 The SDK can be linked to multiple Polyright systems. The same card can be coded in multiple Polyright systems. 
 
