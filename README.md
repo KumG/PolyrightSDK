@@ -4,7 +4,7 @@ The Polyright SDK simplifies the integration of polyright functionalities into a
 The security is managed on the Polyright platform.
 
 
-## Getting Started
+## Functionalities
 
 ### Device Authentication
 
