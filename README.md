@@ -67,7 +67,7 @@ The SDK allows activation token management. That is:
 
 ## Initialization
 
-```
+```csharp
 var cardReaders = new Polyright.SDK.Devices.CardReaders(new CardReaders());
 var beacons = new Polyright.SDK.Devices.Beacons(new Beacons());
 var clientMetadata = new ClientMetadata
@@ -86,7 +86,7 @@ PolyrightContext.Init(options =>
 ```
 ## Authentication
 
-```
+```csharp
 var connectionManager = new ConnectionManager();
 connectionManager.ConnectAsync(eventArgs =>
 {
@@ -99,7 +99,7 @@ await connectionManager.AwaitServiceReadyAsync(token);
 
 ## Wait for devices (card reader, TWINT beacon)
 
-```
+```csharp
 var deviceManager = new DeviceManager();
 await deviceManager.AwaitCardReaderReadyAsync(token);
 await deviceManager.AwaitTwintBeaconReadyAsync(token);
@@ -108,7 +108,7 @@ await deviceManager.AwaitTwintBeaconReadyAsync(token);
 
 ## Do a transaction with Polyright account
 
-```
+```csharp
 var financialService = new FinancialService();
 var transactionRequest = new TransactionRequest
 {
@@ -129,7 +129,7 @@ Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction
 
 ## Do a transaction with TWINT
 
-```
+```csharp
 var financialService = new FinancialService();
 var transactionRequest = new TransactionRequest
 {
