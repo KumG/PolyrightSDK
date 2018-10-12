@@ -68,27 +68,59 @@ The SDK allows activation token management. That is:
 ### Initialization
 
 ```
-
-            var cardReaders = new Polyright.SDK.Devices.CardReaders(new CardReaders());
-            var beacons = new Polyright.SDK.Devices.Beacons(new Beacons());
-            var clientMetadata = new ClientMetadata
-            {
-                ApplicationName = "MyTestApplication",
-                ApplicationVersion = "1.0.0.0"
-            };
-            Polyright.SDK.Windows.Container.Init(cardReaders, beacons, null, clientMetadata);
-            PolyrightContext.Init(options =>
-                                  {
-                                      options.ClientId = "Polyright.PaymentSDK";
-                                      options.SecretKey = "f952a0a18be81faaafd842e24232f96c8052ede6328601d06c9f10a0130b7f7f";
-                                      options.EnvironmentType = EnvironmentType.Development;
-                                  });
-
+var cardReaders = new Polyright.SDK.Devices.CardReaders(new CardReaders());
+var beacons = new Polyright.SDK.Devices.Beacons(new Beacons());
+var clientMetadata = new ClientMetadata
+{
+	ApplicationName = "MyTestApplication",
+	ApplicationVersion = "1.0.0.0"
+};
+Polyright.SDK.Windows.Container.Init(cardReaders, beacons, null, clientMetadata);
+PolyrightContext.Init(options =>
+					  {
+						  options.ClientId = "Polyright.PaymentSDK";
+						  options.SecretKey = "f952a0a18be81faaafd842e24232f96c8052ede6328601d06c9f10a0130b7f7f";
+						  options.EnvironmentType = EnvironmentType.Development;
+					  });
 
 ```
 ### Authentication
 
+```
+var connectionManager = new ConnectionManager();
+connectionManager.ConnectAsync(eventArgs =>
+							   {
+								   Console.WriteLine($"Activation code: {eventArgs.ActivationCode}");
+								   return Task.CompletedTask;
+							   });
+await connectionManager.AwaitServiceReadyAsync(token);
+```
 
 ### Wait for devices
 
+```
+var deviceManager = new DeviceManager();
+await deviceManager.AwaitCardReaderReadyAsync(token);
+
+```
+
 ## Do a transaction
+
+```
+var financialService = new FinancialService();
+var transactionRequest = new TransactionRequest
+{
+	Amount = -1m,
+	Purpose = "Transaction purpose"
+}.OnSelectAccount((scope, persons) =>
+				  {
+				      // Select person account. In this example, select use the personal account
+					  var person = persons.FirstOrDefault();
+					  IAccount account = person?.PersonalAccount;
+					  //Console.WriteLine($"{person?.FormattedName}: {account?.Balance}");
+					  return Task.FromResult(account);
+				  });
+var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
+await transactionScope.AwaitTransactionCompletionAsync(token);
+Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
+```
