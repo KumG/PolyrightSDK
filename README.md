@@ -1,4 +1,4 @@
-# <img align="center" src="./docs/img/polyright-icon.png" height="64">  Polyright SDK
+# <img align="center" src="https://github.com/polyright/PaymentTerminal-URI-Scheme/raw/master/docs/img/polyright-icon.png" height="64">  Polyright SDK
 
 The Polyright SDK simplifies the integration of polyright functionalities into a third-party system. All necessary methods to authenticate user, read cards and do polyright or TWINT transactions through the polyright platform are provided.
 The security is managed on the Polyright platform.
