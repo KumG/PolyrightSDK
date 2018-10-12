@@ -90,7 +90,8 @@ PolyrightContext.Init(options =>
 var connectionManager = new ConnectionManager();
 connectionManager.ConnectAsync(eventArgs =>
 {
-   Console.WriteLine($"Activation code: {eventArgs.ActivationCode}");
+   // Contact Polyright support to activate your device from your activation code
+   // Console.WriteLine($"Activation code: {eventArgs.ActivationCode}");
    return Task.CompletedTask;
 });
 await connectionManager.AwaitServiceReadyAsync(token);
