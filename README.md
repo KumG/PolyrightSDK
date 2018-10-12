@@ -67,6 +67,28 @@ The SDK allows activation token management. That is:
 
 ### Initialization
 
+```
+
+            var cardReaders = new Polyright.SDK.Devices.CardReaders(new CardReaders());
+            var beacons = new Polyright.SDK.Devices.Beacons(new Beacons());
+            var clientMetadata = new ClientMetadata
+            {
+                ApplicationName = "MyTestApplication",
+                ApplicationVersion = "1.0.0.0"
+            };
+            Polyright.SDK.Windows.Container.Init(cardReaders, beacons, null, clientMetadata);
+            PolyrightContext.Init(options =>
+                                  {
+                                      options.ClientId = "Polyright.PaymentSDK";
+                                      options.SecretKey = "f952a0a18be81faaafd842e24232f96c8052ede6328601d06c9f10a0130b7f7f";
+                                      options.EnvironmentType = EnvironmentType.Development;
+                                  });
+
+
+```
+### Authentication
+
+
 ### Wait for devices
 
 ## Do a transaction
