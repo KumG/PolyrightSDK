@@ -19,7 +19,7 @@ The SDK allows activation token management. That is:
 
 -	Initialization of all plugged card readers
   - Automatically get the readers configuration from affiliation polyright system
-  - Multiple reader types (Legic2000, Legi4000, NFC)
+  - Multiple reader types (Legic2000, Legic4000, NFC)
 -	Read the card currently tapped on the reader
 -	Raised events (Any reader ready / no reader ready)
 
