@@ -49,9 +49,9 @@ The SDK allows activation token management. That is:
 
 - Get the transactions done by the device
 
-## Getting Started
+# Getting Started
 
-### Prerequisites
+## Prerequisites
 - RFID or NFC reader (for polyright payments)
 - TWINT beacon (for TWINT payment with beacon)
 - Internet connection
@@ -62,10 +62,10 @@ The SDK allows activation token management. That is:
   - Android (with Xamarin)
   - IOS 12 (with Xamarin)
 
-### Installation
+## Installation
 1. Install the Polyright SDK NuGet package
 
-### Initialization
+## Initialization
 
 ```
 var cardReaders = new Polyright.SDK.Devices.CardReaders(new CardReaders());
@@ -84,7 +84,7 @@ PolyrightContext.Init(options =>
 });
 
 ```
-### Authentication
+## Authentication
 
 ```
 var connectionManager = new ConnectionManager();
@@ -96,7 +96,7 @@ connectionManager.ConnectAsync(eventArgs =>
 await connectionManager.AwaitServiceReadyAsync(token);
 ```
 
-### Wait for devices (card reader, TWINT beacon)
+## Wait for devices (card reader, TWINT beacon)
 
 ```
 var deviceManager = new DeviceManager();
