@@ -55,7 +55,7 @@ The SDK allows activation token management. That is:
 - RFID or NFC reader (for polyright payments)
 - TWINT beacon (for TWINT payment with beacon)
 - Internet connection
-- Access to the Polyright nuget repository : https://nuget.polyright.com
+- Access to the Polyright nuget feed : https://nuget.polyright.com/nuget/Internal/
 - Compatible platforms:
   - .NET 4.5
   - Universal Windows Platform (UWP)
@@ -63,7 +63,7 @@ The SDK allows activation token management. That is:
   - IOS 12 (with Xamarin)
 
 ## Installation
-1. Install the Polyright SDK NuGet package from Polyright NuGet repository using the NuGet Package Manager
+1. Install the Polyright SDK NuGet package from Polyright NuGet feed using the NuGet Package Manager
 
 ## Initialization
 
