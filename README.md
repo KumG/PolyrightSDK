@@ -142,3 +142,10 @@ var twintData = await transactionScope.GetTwintDataAsync(token);
 await transactionScope.AwaitTransactionCompletionAsync(token);
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
+
+## Do a financial closing
+
+```csharp
+await financialService.DoFinancialClosingAsync(token);
+```
+## 
