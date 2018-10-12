@@ -53,22 +53,20 @@ The SDK allows activation token management. That is:
 
 ### Prerequisites
 - RFID or NFC reader (for polyright payments)
-- TWINT
+- TWINT beacon (for TWINT payment with beacon)
 - Internet connection
+- Access to the Polyright nuget repository : https://nuget.polyright.com
 - Compatible platforms:
   - .NET 4.5
   - Universal Windows Platform (UWP)
   - Android (with Xamarin)
   - IOS 12 (with Xamarin)
 
-
 ### Installation
-1. Install application from App Store
-    * [Windows Store](https://www.microsoft.com/store/p/polyright-payment-terminal/9nblggh5263v)
-    * [Google Play](https://play.google.com/store/apps/details?id=com.polyright.PaymentTerminal)
-    * Apple Store *(coming soon)*
-2. Launch application
-3. Activate Payment Terminal
-4. Ready!
+1. Install the Polyright SDK NuGet package
 
-<br>
+### Initialization
+
+### Wait for devices
+
+## Do a transaction
