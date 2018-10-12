@@ -17,14 +17,37 @@ The SDK allows activation token management. That is:
 
 ### Card Reader management
 
+-	Initialization of all plugged card readers
+  - Automatically get the readers configuration from affiliation polyright system
+  - Multiple reader types (Legic2000, Legi4000, NFC)
+-	Read the card currently tapped on the reader
+-	Raised events (Any reader ready / no reader ready)
+
+
 ### TWINT Beacon management
 
-### Device Authentication
+-	Seamless TWINT beacons initialization
+-	Automatic firmware update
+-	Ready to pay with TWINT
+  - TWINT payment itself is managed by the polyright platform
+
 
 ### Customer information
+-	Wait for a card and get owner information (all person properties and custom informations)
+-	Get the transactions of the person
 
 ### Financial
+- Transaction process
+  - Begin a transaction with information (amount, description, sold products, ...)
+  - Wait for a customer (polyright card , TWINT customer)
+  - Choose the person account to use
+  - Wait until the transaction is finalized
+  - Cancel the transaction
+  
+- Financial closing
+  - Do a financial closing and get a summary of the transactions done
 
+- Get the transactions done by the device
 
 ## Getting Started
 
