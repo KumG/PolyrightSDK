@@ -149,3 +149,17 @@ Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction
 await financialService.DoFinancialClosingAsync(token);
 ```
 ## 
+
+## Get Person Data
+
+The SDK can be linked to multiple Polyright systems. The same card can be coded in multiple Polyright systems. 
+
+```csharp
+var customerService = new CustomerService();
+var customer = await customerService.AwaitCustomerAsync(token);
+var persons = await customerService.GetPersonsAsync(customer, token);
+var personTransactions = await customerService.GetPersonTransactionsAsync(persons.First(), new DateTime(2018, 10, 1), new DateTime(2018, 10, 1), 0, 100, token);
+```
+## 
+
+
