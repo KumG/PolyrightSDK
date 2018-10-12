@@ -96,11 +96,12 @@ connectionManager.ConnectAsync(eventArgs =>
 await connectionManager.AwaitServiceReadyAsync(token);
 ```
 
-### Wait for devices
+### Wait for devices (card reader, TWINT beacon)
 
 ```
 var deviceManager = new DeviceManager();
 await deviceManager.AwaitCardReaderReadyAsync(token);
+await deviceManager.AwaitTwintBeaconReadyAsync(token);
 
 ```
 
