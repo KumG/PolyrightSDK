@@ -106,7 +106,7 @@ await deviceManager.AwaitTwintBeaconReadyAsync(token);
 
 ```
 
-## Do a transaction
+## Do a transaction with polyright account
 
 ```
 var financialService = new FinancialService();
@@ -123,6 +123,22 @@ var transactionRequest = new TransactionRequest
   return Task.FromResult(account);
 });
 var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
+await transactionScope.AwaitTransactionCompletionAsync(token);
+Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
+```
+
+## Do a transaction with TWINT
+
+```
+var financialService = new FinancialService();
+var transactionRequest = new TransactionRequest
+{
+	Amount = -1m,
+	Purpose = "Transaction purpose"
+};
+var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
+var twintData = await transactionScope.GetTwintDataAsync(token);
+Console.WriteLine($"TWINT code: {twintData.Token}");
 await transactionScope.AwaitTransactionCompletionAsync(token);
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
