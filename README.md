@@ -106,7 +106,7 @@ await deviceManager.AwaitTwintBeaconReadyAsync(token);
 
 ```
 
-## Do a transaction with polyright account
+## Do a transaction with Polyright account
 
 ```
 var financialService = new FinancialService();
