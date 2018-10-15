@@ -5,8 +5,8 @@ The security is managed on the Polyright platform.
 
 ## Glossary
 
-- Polyright system: A Polyright Manager installation, installed on a customer server (on premises)
-- Polyright platform: Cloud website connected to multiple systems
+- *Polyright system:* A Polyright Manager installation, installed on a customer server (on premise). Also known as "affiliation".
+- Polyright platform: Cloud website connected to multiple polyright systems
 
 ## Functionalities
 
