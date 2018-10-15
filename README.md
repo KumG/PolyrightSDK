@@ -95,7 +95,7 @@ PolyrightContext.Init(options =>
 });
 
 ```
-## Authentication
+## Connection and authentication
 
 To be used, a device using the Polyright SDK must be manually activated by the Polyright support
 
@@ -108,6 +108,19 @@ connectionManager.ConnectAsync(eventArgs =>
    return Task.CompletedTask;
 });
 await connectionManager.AwaitServiceReadyAsync(token);
+```
+
+An event exists to be notified in case of status change.
+
+```csharp
+connectionManager.StatusChanged += (sender, args) =>
+{
+   Console.WriteLine("Service status changed.");
+   Console.WriteLine($"Activation code: {args.Status.ActivationCode}");
+   Console.WriteLine($"IsOnline: {args.Status.IsOnline}");
+   Console.WriteLine($"IsAuthenticated: {args.Status.IsAuthenticated}");
+   Console.WriteLine($"Error: {args.Error.Message}");
+};
 ```
 
 ## Wait for devices (card reader, TWINT beacon)
