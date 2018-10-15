@@ -110,7 +110,7 @@ connectionManager.ConnectAsync(eventArgs =>
 await connectionManager.AwaitServiceReadyAsync(token);
 ```
 
-An event exists to be notified in case of status change.
+Use StatusChanged event to be notified in case of status change.
 
 ```csharp
 connectionManager.StatusChanged += (sender, args) =>
@@ -131,6 +131,14 @@ await deviceManager.AwaitCardReaderReadyAsync(token);
 await deviceManager.AwaitTwintBeaconReadyAsync(token);
 
 ```
+
+Use CardReaderStateChanged and TwintBeaconStateChanged to be notified if device status change.
+
+```csharp
+deviceManager.CardReaderStateChanged += (sender, args) => { Console.WriteLine($"Card reader state changed: {args.IsReady}"); };
+deviceManager.TwintBeaconStateChanged += (sender, args) => { Console.WriteLine($"TWINT beacon state changed: {args.IsReady}"); };
+```
+
 
 ## Do a transaction with Polyright account
 
