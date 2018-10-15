@@ -53,9 +53,9 @@ The SDK allows activation token management. That is:
 
 - Get the transactions done by the device
 
-# Getting Started
+## Getting Started
 
-## Prerequisites
+### Prerequisites
 - RFID or NFC reader (for polyright payments)
 - TWINT beacon (for TWINT payment with beacon)
 - Internet connection
@@ -69,11 +69,11 @@ The SDK allows activation token management. That is:
   
 All SDK methods are asynchronous. See [Task-based Asynchronous Programming](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-based-asynchronous-programming)
 
-## Installation
+### Installation
 1. Add the Polyright NuGet feed to the packages sources
 2. Install the Polyright SDK NuGet package from Polyright NuGet feed using the NuGet Package Manager
 
-## Initialization
+### Initialization
 
 First of all, the SDK must be initialized :
 - Client credentials
@@ -99,7 +99,7 @@ PolyrightContext.Init(options =>
 });
 
 ```
-## Connection and authentication
+### Connection and authentication
 
 To be used, a device using the Polyright SDK must be manually activated by the Polyright support
 
@@ -127,7 +127,7 @@ connectionManager.StatusChanged += (sender, args) =>
 };
 ```
 
-## Wait for devices (card reader, TWINT beacon)
+### Wait for devices (card reader, TWINT beacon)
 
 Devices are automatically initialized after the initialization of the SDK.
 
@@ -148,7 +148,7 @@ deviceManager.TwintBeaconStateChanged += (sender, args) => { Console.WriteLine($
 ```
 
 
-## Do a transaction with Polyright account
+### Do a transaction with Polyright account
 
 First, a transaction must be initialized, with all its information.
 
@@ -177,7 +177,7 @@ await transactionScope.AwaitTransactionCompletionAsync(token);
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
 
-## Do a transaction with TWINT
+### Do a transaction with TWINT
 
 The process for a TWINT transaction is the same.
 
@@ -197,14 +197,12 @@ await transactionScope.AwaitTransactionCompletionAsync(token);
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
 
-## Do a financial closing
+### Do a financial closing
 
 ```csharp
 await financialService.DoFinancialClosingAsync(token);
 ```
-## 
-
-## Get Person Data and transactions
+### Get Person Data and transactions
 
 The SDK can be linked to multiple Polyright systems. The same card can be coded in multiple Polyright systems. 
 
@@ -214,6 +212,5 @@ var customer = await customerService.AwaitCustomerAsync(token);
 var persons = await customerService.GetPersonsAsync(customer, token);
 var personTransactions = await customerService.GetPersonTransactionsAsync(persons.First(), new DateTime(2018, 10, 1), new DateTime(2018, 10, 1), 0, 100, token);
 ```
-## 
 
 
