@@ -110,7 +110,7 @@ connectionManager.ConnectAsync(eventArgs =>
 await connectionManager.AwaitServiceReadyAsync(token);
 ```
 
-Use StatusChanged event to be notified in case of status change.
+Use StatusChanged event to be notified in case of connection status change.
 
 ```csharp
 connectionManager.StatusChanged += (sender, args) =>
