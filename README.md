@@ -161,7 +161,7 @@ var transactionRequest = new TransactionRequest
 // Select person account. In this example, select use the personal account
   var person = persons.FirstOrDefault();
   IAccount account = person?.PersonalAccount;
-  //Console.WriteLine($"{person?.FormattedName}: {account?.Balance}");
+  Console.WriteLine($"{person?.FormattedName}: {account?.Balance}");
   return Task.FromResult(account);
 });
 var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
@@ -184,7 +184,7 @@ var transactionRequest = new TransactionRequest
 };
 var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
 var twintData = await transactionScope.GetTwintDataAsync(token);
-//Console.WriteLine($"TWINT code: {twintData.Token}");
+Console.WriteLine($"TWINT code: {twintData.Token}");
 await transactionScope.AwaitTransactionCompletionAsync(token);
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
