@@ -125,6 +125,10 @@ connectionManager.StatusChanged += (sender, args) =>
 
 ## Wait for devices (card reader, TWINT beacon)
 
+Devices are automatically initialized after the initialization of the SDK.
+
+It is possible to wait until they are ready.
+
 ```csharp
 var deviceManager = new DeviceManager();
 await deviceManager.AwaitCardReaderReadyAsync(token);
