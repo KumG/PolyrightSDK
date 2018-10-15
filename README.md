@@ -70,7 +70,8 @@ The SDK allows activation token management. That is:
 All SDK methods are asynchronous. See [Task-based Asynchronous Programming](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-based-asynchronous-programming)
 
 ## Installation
-1. Install the Polyright SDK NuGet package from Polyright NuGet feed using the NuGet Package Manager
+1. Add the Polyright NuGet feed to the packages sources
+2. Install the Polyright SDK NuGet package from Polyright NuGet feed using the NuGet Package Manager
 
 ## Initialization
 
