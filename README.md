@@ -161,13 +161,13 @@ var transactionRequest = new TransactionRequest
 	Amount = -1m,
 	Purpose = "Transaction purpose"
 }.OnSelectAccount((scope, persons) =>
-{
-// Select person account. In this example, select use the personal account
-  var person = persons.FirstOrDefault();
-  IAccount account = person?.PersonalAccount;
-  Console.WriteLine($"{person?.FormattedName}: {account?.Balance}");
-  return Task.FromResult(account);
-});
+	{
+	// Select person account. In this example, select use the personal account
+	  var person = persons.FirstOrDefault();
+	  IAccount account = person?.PersonalAccount;
+	  Console.WriteLine($"{person?.FormattedName}: {account?.Balance}");
+	  return Task.FromResult(account);
+	});
 var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
 await transactionScope.AwaitTransactionCompletionAsync(token);
 //Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
