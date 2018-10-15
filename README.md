@@ -150,6 +150,10 @@ await transactionScope.AwaitTransactionCompletionAsync(token);
 
 ## Do a transaction with TWINT
 
+The process for a TWINT transaction is the same.
+
+Once the transaction has been initialized, it is possible to get the TWINT code / QR-Code, or wait until someone pay with the TWINT beacon.
+
 ```csharp
 var financialService = new FinancialService();
 var transactionRequest = new TransactionRequest
