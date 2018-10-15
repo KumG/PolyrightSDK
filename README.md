@@ -104,7 +104,7 @@ var connectionManager = new ConnectionManager();
 connectionManager.ConnectAsync(eventArgs =>
 {
    // Contact Polyright support to activate your device from your activation code
-   // Console.WriteLine($"Activation code: {eventArgs.ActivationCode}");
+   Console.WriteLine($"Activation code: {eventArgs.ActivationCode}");
    return Task.CompletedTask;
 });
 await connectionManager.AwaitServiceReadyAsync(token);
@@ -162,7 +162,7 @@ var transactionRequest = new TransactionRequest
 	Purpose = "Transaction purpose"
 }.OnSelectAccount((scope, persons) =>
 	{
-	// Select person account. In this example, select use the personal account
+	  // Select person account. In this example, select use the personal account
 	  var person = persons.FirstOrDefault();
 	  IAccount account = person?.PersonalAccount;
 	  Console.WriteLine($"{person?.FormattedName}: {account?.Balance}");
@@ -170,7 +170,7 @@ var transactionRequest = new TransactionRequest
 	});
 var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
 await transactionScope.AwaitTransactionCompletionAsync(token);
-//Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
+Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
 
 ## Do a transaction with TWINT
