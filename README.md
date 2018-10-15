@@ -59,7 +59,7 @@ The SDK allows activation token management. That is:
 - RFID or NFC reader (for polyright payments)
 - TWINT beacon (for TWINT payment with beacon)
 - Internet connection
-- Access to the Polyright nuget feed : https://nuget.polyright.com/nuget/Internal/
+- Access to the Polyright NuGet feed : https://nuget.polyright.com/nuget/Internal/
 - Compatible platforms:
   - .NET 4.5
   - Universal Windows Platform (UWP)
