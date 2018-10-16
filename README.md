@@ -175,8 +175,8 @@ var transactionRequest = new TransactionRequest
 	  Console.WriteLine($"{person?.FormattedName}: {account?.Balance}");
 	  return Task.FromResult(account);
 	});
-var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
-await transactionScope.AwaitTransactionCompletionAsync(token);
+var transactionScope = await financialService.BeginTransactionAsync(transactionRequest);
+await transactionScope.AwaitTransactionCompletionAsync();
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
 
@@ -193,17 +193,17 @@ var transactionRequest = new TransactionRequest
 	Amount = -1m,
 	Purpose = "Transaction purpose"
 };
-var transactionScope = await financialService.BeginTransactionAsync(transactionRequest, token);
-var twintData = await transactionScope.GetTwintDataAsync(token);
+var transactionScope = await financialService.BeginTransactionAsync(transactionRequest);
+var twintData = await transactionScope.GetTwintDataAsync();
 Console.WriteLine($"TWINT code: {twintData.Token}");
-await transactionScope.AwaitTransactionCompletionAsync(token);
+await transactionScope.AwaitTransactionCompletionAsync();
 Console.WriteLine($"Transaction completed. Status: {transactionScope.Transaction.Status}");
 ```
 
 ### Do a financial closing
 
 ```csharp
-await financialService.DoFinancialClosingAsync(token);
+await financialService.DoFinancialClosingAsync();
 ```
 ### Get Person Data and transactions
 
@@ -211,9 +211,9 @@ The SDK can be linked to multiple Polyright systems. The same card can be coded 
 
 ```csharp
 var customerService = new CustomerService();
-var customer = await customerService.AwaitCustomerAsync(token);
-var persons = await customerService.GetPersonsAsync(customer, token);
-var personTransactions = await customerService.GetPersonTransactionsAsync(persons.First(), new DateTime(2018, 10, 1), new DateTime(2018, 10, 1), 0, 100, token);
+var customer = await customerService.AwaitCustomerAsync();
+var persons = await customerService.GetPersonsAsync(customer);
+var personTransactions = await customerService.GetPersonTransactionsAsync(persons.First(), new DateTime(2018, 10, 1), new DateTime(2018, 10, 1), 0, 100);
 ```
 
 
