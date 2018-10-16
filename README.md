@@ -37,7 +37,7 @@ The SDK allows activation token management. That is:
 
 
 ### Customer information
--	Wait for a card and get owner information (all person properties and custom informations)
+-	Wait for a card and get owner information from the polyright system (all person properties and custom informations)
 -	Get the transactions of the person
 
 ### Financial
