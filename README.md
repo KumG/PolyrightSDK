@@ -55,17 +55,20 @@ The SDK allows activation token management. That is:
 
 ## Getting Started
 
+### Compatible platforms
+- Compatible with .NET Standard 1.4:
+  - .NET Framework 4.6.1
+  - Universal Windows Platform (UWP)
+  - Android (with Xamarin)
+  - IOS 12 (with Xamarin)
+
 ### Prerequisites
 - RFID or NFC reader (for polyright payments)
 - TWINT beacon (for TWINT payment with beacon)
 - Internet connection
 - A Polyright system to be connected to
 - Access to the Polyright NuGet feed : https://nuget.polyright.com/nuget/Internal/
-- Compatible with .NET Standard 1.4:
-  - .NET Framework 4.6.1
-  - Universal Windows Platform (UWP)
-  - Android (with Xamarin)
-  - IOS 12 (with Xamarin)
+
   
 All SDK methods are asynchronous. See [Task-based Asynchronous Programming](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-based-asynchronous-programming)
 
