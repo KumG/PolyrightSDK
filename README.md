@@ -114,7 +114,7 @@ connectionManager.ConnectAsync(eventArgs =>
    Console.WriteLine($"Activation code: {eventArgs.ActivationCode}");
    return Task.CompletedTask;
 });
-await connectionManager.AwaitServiceReadyAsync(token);
+await connectionManager.AwaitServiceReadyAsync();
 ```
 
 Use StatusChanged event to be notified in case of connection status change.
