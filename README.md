@@ -79,9 +79,9 @@ All SDK methods are asynchronous. See [Task-based Asynchronous Programming](http
 ### Initialization
 
 First of all, the SDK must be initialized :
-- Client credentials
-- Device information
-- Platform specific cardreaders / TWINT beacons SDKs
+- Send client credentials
+- Send device information
+- Instance of platform specific cardreaders / TWINT beacons SDKs
 - Custom secure storage if necessary
 
 
