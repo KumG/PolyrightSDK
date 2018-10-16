@@ -138,8 +138,8 @@ It is possible to wait until they are ready.
 
 ```csharp
 var deviceManager = new DeviceManager();
-await deviceManager.AwaitCardReaderReadyAsync(token);
-await deviceManager.AwaitTwintBeaconReadyAsync(token);
+await deviceManager.AwaitCardReaderReadyAsync();
+await deviceManager.AwaitTwintBeaconReadyAsync();
 
 ```
 
