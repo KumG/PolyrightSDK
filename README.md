@@ -71,7 +71,7 @@ All SDK methods are asynchronous. See [Task-based Asynchronous Programming](http
 
 ### Installation
 1. Add the Polyright NuGet feed to the packages sources
-2. Install the Polyright.SDK NuGet package from Polyright NuGet feed using the NuGet Package Manager
+2. Install the **Polyright.SDK** NuGet package from Polyright NuGet feed using the NuGet Package Manager
 
 ### Initialization
 
