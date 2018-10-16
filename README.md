@@ -56,11 +56,11 @@ The SDK allows activation token management. That is:
 ## Getting Started
 
 ### Compatible platforms
-- Compatible with .NET Standard 1.4:
-  - .NET Framework 4.6.1
-  - Universal Windows Platform (UWP)
-  - Android (with Xamarin)
-  - IOS 12 (with Xamarin)
+Compatible with .NET Standard 1.4:
+- .NET Framework 4.6.1
+- Universal Windows Platform (UWP)
+- Android (with Xamarin)
+- IOS 12 (with Xamarin)
 
 ### Prerequisites
 - RFID or NFC reader (for polyright payments)
