@@ -61,8 +61,8 @@ The SDK allows activation token management. That is:
 - Internet connection
 - A Polyright system to be connected to
 - Access to the Polyright NuGet feed : https://nuget.polyright.com/nuget/Internal/
-- Compatible platforms:
-  - .NET 4.6.1
+- Compatible with .NET Standard 1.4:
+  - .NET Framework 4.6.1
   - Universal Windows Platform (UWP)
   - Android (with Xamarin)
   - IOS 12 (with Xamarin)
