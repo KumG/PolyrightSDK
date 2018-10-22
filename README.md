@@ -63,7 +63,7 @@ Compatible with .NET Standard 1.4:
 - IOS 12 (with Xamarin)
 
 ### Prerequisites
-- RFID or NFC reader (for polyright payments)
+- RFID or NFC reader (for payments with Polyright card)
 - TWINT beacon (for TWINT payment with beacon)
 - Internet connection
 - A Polyright system to be connected to
